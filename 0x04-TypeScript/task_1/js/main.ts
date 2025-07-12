@@ -43,3 +43,29 @@ const printTeacher: PrintTeacherFunction = (a: string, b: string): string => {
 };
 
 console.log(printTeacher("Jacob", "Juma"));
+
+/** Number 4- StudentClass */
+
+interface StudentConstructor {
+	new (firstName: string, lastName: string): StudentDoing;
+}
+
+interface StudentDoing {
+	workOnHomework(): string;
+	displayName(): string;
+}
+
+class StudentClass implements StudentDoing {
+	constructor(
+		private firstName: string,
+		private lastName: string
+	) {}
+
+	workOnHomework(): string {
+		return "Currently Working";
+	}
+
+	displayName(): string {
+		return this.firstName;
+	}
+}
