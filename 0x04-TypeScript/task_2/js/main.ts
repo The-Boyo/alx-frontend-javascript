@@ -66,11 +66,6 @@ const createEmployee = (salary: string | number) => {
 	}
 };
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee("$500"));
-console.log(createEmployee("400"));
-
 /**Number 6- Functions Specific to employees */
 const isDirector = (employee: Director | Teacher): employee is Director => {
 	return (employee as Director).workDirectorTasks !== undefined;
@@ -84,5 +79,11 @@ const executeWork = (employee: Director | Teacher): string => {
 	}
 };
 
-console.log(executeWork(createEmployee(200)));
-console.log(executeWork(createEmployee(1000)));
+/** Number 7 */
+
+type Subjects = "Math" | "History";
+
+const teachClass = (todayClass: Subjects): string => {
+	if (todayClass === "Math") return "Teaching Math";
+	return "Teaching History";
+};
